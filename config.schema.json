@@ -23,6 +23,24 @@
                 "description": "If API key is provided, sunhsine is reported only during daylight times when sky is not overcast",
                 "required": false
             },
+            "sun": {
+                "type": "number",
+                "title": "OpenWeather API minimum sun threshold",
+                "description": "If API key is provided, this value set minimum sun threshold",
+                "required": true,
+                "default": 10,
+                "minimum": 0,
+                "maximum": 100
+            },
+            "overcast": {
+                "type": "number",
+                "title": "OpenWeather API maximum overcast threshold",
+                "description": "If API key is provided, this value set maximum overcast threshold",
+                "required": true,
+                "default": 25,
+                "minimum": 0,
+                "maximum": 100
+            },            
             "sensors": {
                 "type": "array",
                 "title": "Sensors",
@@ -51,6 +69,24 @@
                             "title": "Upper Threshold",
                             "description": "Right side of sky section within which the sensor should activate",
                             "required": true
+                        },
+                        "lowerAltitudeThreshold": {
+                            "type": "number",
+                            "title": "Lower Altitude Threshold",
+                            "description": "Lower altitude threshold within which the sensor should activate",
+                            "required": true,
+                            "default": 0,
+                            "minimum": 0,
+                            "maximum": 90
+                        },
+                        "upperAltitudeThreshold": {
+                            "type": "number",
+                            "title": "Upper Altitude Threshold",
+                            "description": "Upper altitude threshold within which the sensor should activate",
+                            "required": true,
+                            "default": 90,
+                            "minimum": 0,
+                            "maximum": 90                        
                         }
                     }
                 }
